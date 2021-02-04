@@ -23,7 +23,9 @@ Criação do DBContext
   }
 ```
 
-Modelos
+## Modelos
+  
+Criamos o modelo de banco de dados ContaFinanceira e Pessoa, e estamos utilizando a nomenclatura padrão do Entidade <<Entidade>>Id.
 
 ```c#
   public class ContaFinanceira
@@ -43,7 +45,9 @@ Modelos
   }
 ```
 
-Método ConfigureServices
+## Método ConfigureServices  
+  
+A configuração de AddNewtonsoftJson ReferenceLoopHandling é necessaário somente se devolvermos a própria entidade do banco de dados. Se devolvermos dymac conforme o modelo 2 dai não é necessário colocar essa configuração no ConfigureServices.
 
 ```c#
   public void ConfigureServices(IServiceCollection services)
@@ -60,7 +64,10 @@ Método ConfigureServices
       ...
 ```
 
-Controller
+## Controller
+  
+A Controller possui dois exemplos, um devolvendo a própria entidade do banco de dados usando o comando Include (se não igorarmos o ReferenceLoopHandling então iremos receber um erro no momento de executar a API).  
+O exemplo com o dynamic não gera o Erro de ReferenceLoopHandling pois já estamos determinando exatamente os campos que queremos.  
 
 ```c#
   [Route("api/[controller]")]
