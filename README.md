@@ -1,6 +1,14 @@
 # Ignore-ReferenceLoopHandling-EntityFrameWork
 Projeto de Exemplo para ignorar ReferenceLoopHandling no includes do EntityFramework
 
+## Erro
+An unhandled exception occurred while processing the request.  
+JsonException: A possible object cycle was detected which is not supported. This can either be due to a cycle or if the object depth is larger than the maximum allowed depth of 32.  
+System.Text.Json.ThrowHelper.ThrowInvalidOperationException_SerializerCycleDetected(int maxDepth)  
+  
+![image](https://user-images.githubusercontent.com/30643035/106830928-62c8f800-6665-11eb-8b38-f26571aaba85.png)
+
+
 Adicione os pacotes do Entity e do JSON  
 
 ```xml
